@@ -110,11 +110,19 @@ function Services() {
 
         <div className="capability-strip reveal" ref={stripRef}>
           <div className="capability-item">
-            <svg viewBox="0 0 64 64" className="cap-illustration"><path d="M14 22 L32 12 L50 22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" /><rect x="18" y="22" width="28" height="4" rx="1" /><rect x="18" y="30" width="28" height="4" rx="1" /><line x1="24" y1="38" x2="24" y2="48" strokeWidth="2" /><line x1="40" y1="38" x2="40" y2="48" strokeWidth="2" /><line x1="18" y1="48" x2="46" y2="48" strokeWidth="2" /></svg>
+            <img
+              className="cap-illustration cap-photo"
+              src="https://images.unsplash.com/photo-1698752822107-69f8973936e4?auto=format&fit=crop&w=200&q=70"
+              alt="Solar panel array"
+            />
             <span>Solar</span>
           </div>
           <div className="capability-item">
-            <svg viewBox="0 0 64 64" className="cap-illustration"><rect x="16" y="14" width="32" height="24" rx="2" strokeWidth="2" fill="none" /><line x1="24" y1="44" x2="24" y2="38" strokeWidth="2" /><line x1="40" y1="44" x2="40" y2="38" strokeWidth="2" /><line x1="18" y1="48" x2="46" y2="48" strokeWidth="2" /><circle cx="24" cy="22" r="1.6" fill="currentColor" stroke="none" /><circle cx="32" cy="22" r="1.6" fill="currentColor" stroke="none" /><circle cx="40" cy="22" r="1.6" fill="currentColor" stroke="none" /><line x1="20" y1="30" x2="44" y2="30" strokeWidth="1.4" /></svg>
+            <img
+              className="cap-illustration cap-photo"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=200&q=70"
+              alt="Network cabling and switches"
+            />
             <span>Network</span>
           </div>
           <div className="capability-item">
@@ -122,11 +130,19 @@ function Services() {
             <span>Forecourt</span>
           </div>
           <div className="capability-item">
-            <svg viewBox="0 0 64 64" className="cap-illustration"><path d="M16 24c0-6 7-10 16-10s16 4 16 10v14c0 6-7 10-16 10s-16-4-16-10z" strokeWidth="2" fill="none" /><ellipse cx="32" cy="24" rx="16" ry="6" strokeWidth="2" fill="none" /><line x1="16" y1="31" x2="48" y2="31" strokeWidth="1.2" opacity="0.6" /></svg>
+            <img
+              className="cap-illustration cap-photo"
+              src="https://images.unsplash.com/31/khLPhykbRGiQmBGR4V6K__DSC1730.jpg?auto=format&fit=crop&w=200&q=70"
+              alt="Industrial fuel storage tanks"
+            />
             <span>Storage</span>
           </div>
           <div className="capability-item">
-            <svg viewBox="0 0 64 64" className="cap-illustration"><rect x="14" y="18" width="24" height="16" rx="2" strokeWidth="2" fill="none" /><path d="M38 22 L50 17 L50 33 L38 28 Z" strokeWidth="2" strokeLinejoin="round" fill="none" /><circle cx="26" cy="26" r="4" strokeWidth="2" fill="none" /></svg>
+            <img
+              className="cap-illustration cap-photo"
+              src="https://images.unsplash.com/photo-1529265895721-65945a176cff?auto=format&fit=crop&w=200&q=70"
+              alt="CCTV security cameras"
+            />
             <span>Security</span>
           </div>
         </div>

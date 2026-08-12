@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Maestro from './components/Maestro';
+import LiveStatus from './components/LiveStatus';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ function App() {
         <About />
         <Services />
         <Maestro />
+        <LiveStatus />
         <Contact />
       </main>
       <Footer />

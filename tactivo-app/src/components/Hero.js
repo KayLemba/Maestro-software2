@@ -1,37 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import Carousel from './Carousel';
+
+import fuelPump from '../assets/gallery/fuel-pump.jpg';
+import tagReader from '../assets/gallery/tag-reader.jpg';
+import cctvCamera from '../assets/gallery/cctv-camera.jpg';
+import posSystem from '../assets/gallery/pos-system.jpg';
+import probe from '../assets/gallery/probe.jpg';
+import tankGauge from '../assets/gallery/tank-gauge.jpg';
+import dispenserController from '../assets/gallery/dispenser-controller.jpg';
+import nozzles from '../assets/gallery/nozzles.jpg';
+
+const SLIDES = [
+  { src: fuelPump, label: 'Fuel Pump' },
+  { src: tagReader, label: 'Tag Reader' },
+  { src: cctvCamera, label: 'CCTV Camera' },
+  { src: posSystem, label: 'POS System' },
+  { src: probe, label: 'Probe' },
+  { src: tankGauge, label: 'Tank Gauge' },
+  { src: dispenserController, label: 'Fuel Dispenser Controller' },
+  { src: nozzles, label: 'Nozzles' },
+];
 
 function Hero() {
-  const panelRef = useRef(null);
-  const [animated, setAnimated] = useState(false);
-  const [litres, setLitres] = useState(0);
-
-  useEffect(() => {
-    const el = panelRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !animated) {
-            setAnimated(true);
-            animateCounter(48213, 1600, setLitres);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [animated]);
-
-  useEffect(() => {
-    if (!animated) return;
-    const id = setInterval(() => {
-      setLitres((prev) => prev + Math.floor(Math.random() * 4) + 1);
-    }, 3500);
-    return () => clearInterval(id);
-  }, [animated]);
-
   return (
     <section className="hero wrap">
       <div className="hero-copy">
@@ -48,50 +38,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className={`status-panel reveal${animated ? ' in' : ''}`} ref={panelRef}>
-        <div className="status-head">
-          <span className="label">Live Forecourt Status</span>
-          <span className="live-dot"><i></i>Monitoring</span>
-        </div>
-
-        <div className="tank-row">
-          <div className="row-top"><span>Tank A — Diesel</span><span>82%</span></div>
-          <div className="bar-track"><div className="bar-fill" style={{ width: animated ? '82%' : '0%' }} /></div>
-        </div>
-        <div className="tank-row">
-          <div className="row-top"><span>Tank B — Petrol (Unleaded)</span><span>61%</span></div>
-          <div className="bar-track"><div className="bar-fill" style={{ width: animated ? '61%' : '0%' }} /></div>
-        </div>
-
-        <div className="dispenser-grid">
-          <div className="disp-chip"><span>Dispenser 01</span><span className="dot" /></div>
-          <div className="disp-chip"><span>Dispenser 02</span><span className="dot" /></div>
-          <div className="disp-chip"><span>Dispenser 03</span><span className="dot" /></div>
-          <div className="disp-chip"><span>Dispenser 04</span><span className="dot" /></div>
-        </div>
-
-        <div className="counter-block">
-          <span className="cl-label">Litres dispensed today</span>
-          <span className="cl-value">{litres.toLocaleString('en-US')}</span>
-        </div>
-        <div className="pts2-line">
-          <span>PTS2 Controller Link</span>
-          <span className="secure"><i className="secure-dot"></i> HTTPS · SECURE</span>
-        </div>
-      </div>
+      <Carousel slides={SLIDES} />
     </section>
   );
-}
-
-function animateCounter(target, duration, setValue) {
-  const start = performance.now();
-  function tick(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    setValue(Math.floor(eased * target));
-    if (progress < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
 }
 
 export default Hero;

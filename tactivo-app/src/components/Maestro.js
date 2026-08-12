@@ -5,8 +5,6 @@ function Maestro() {
   const headRef = useReveal();
   const centralRef = useReveal();
   const liteRef = useReveal();
-  const flowRef = useReveal();
-  const badgesRef = useReveal();
 
   return (
     <section className="section maestro-section" id="maestro">
@@ -51,7 +49,7 @@ function Maestro() {
           <div className="maestro-card lite reveal" ref={liteRef}>
             <span className="maestro-tag">Maestro Lite</span>
             <h3>The Backend Engine</h3>
-            <p>A backend system connected directly to the PTS2 controller — the layer that talks to the hardware in real time.</p>
+            <p>A backend system that talks directly to the hardware in real time, running the day-to-day operations at the station.</p>
             <ul>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -79,18 +77,6 @@ function Maestro() {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="flow-diagram reveal" ref={flowRef}>
-          <div className="flow-node">Your Servers<small>Maestro Central / Lite</small></div>
-          <div className="flow-arrow"></div>
-          <div className="flow-node flow-node--mid">PTS2 Controller<small>The middleman</small></div>
-          <div className="flow-arrow"></div>
-          <div className="flow-node">Fuel Pumps &amp; Tanks<small>Physical hardware</small></div>
-        </div>
-        <div className="protocol-badges reveal" ref={badgesRef}>
-          <span>Protocol: <b>HTTP</b> supported</span>
-          <span>Protocol: <b>HTTPS</b> supported</span>
         </div>
       </div>
     </section>
