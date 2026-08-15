@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import tactivoLogo from '../assets/tactivo-logo.png';
+import LogoMark from './Logo';
 import { useTheme } from '../context/ThemeContext';
 
 function Navbar() {
@@ -19,7 +19,8 @@ function Navbar() {
     <header className={scrolled ? 'scrolled' : ''}>
       <nav className="wrap">
         <a href="#top" className="brand">
-          <img src={tactivoLogo} alt="Tactivo Technologies logo" />
+          <LogoMark />
+          <span className="brand-name">TACTIVO <span>TECHNOLOGIES</span></span>
         </a>
         <ul className={`nav-links${navOpen ? ' open' : ''}`}>
           <li><a href="#about" onClick={closeNav}>About</a></li>

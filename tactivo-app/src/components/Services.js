@@ -10,64 +10,43 @@ const CORE_SERVICES = [
     title: 'Forecourt Solutions',
     desc: 'Everything for your forecourt — from fuel tanks and dispensers to automation — delivered as one seamless system built to maximise profit and uptime.',
     tags: ['Design', 'Installation', 'Compliance'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <path d="M3 21h12M6 21V8l5-5 5 5v13M9 21v-6h4v6" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/photo-1727483771218-c1cc488d020c?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'Forecourt canopy and fuel pumps at a filling station',
   },
   {
     title: 'IT Solutions',
     desc: 'Total control over your business, with trusted solutions in surveillance, networking, and solar energy that keep your operation always on.',
     tags: ['Surveillance', 'LAN/WAN', 'Software Dev', 'Intercom', 'Solar'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/photo-1680691257251-5fead813b73e?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'Network patch panel and cabling in a server cabinet',
   },
   {
     title: 'Fuel Tank / UST / AST',
     desc: 'Built to last, our underground and aboveground storage tanks provide a safe, reliable foundation for your fuel operations — securely stored and fully compliant.',
     tags: ['UST', 'AST', 'Leak Protection'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <rect x="4" y="6" width="16" height="14" rx="2" /><path d="M8 6V4h8v2" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/31/khLPhykbRGiQmBGR4V6K__DSC1730.jpg?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'Industrial aboveground fuel storage tanks',
   },
   {
     title: 'Fuel Dispensers',
     desc: 'Maximise every transaction with high-flow dispensers built for speed and reliability — engineered for zero downtime and more throughput at the pump.',
     tags: ['High-Flow', 'Multi-Product'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <path d="M6 21V5a2 2 0 0 1 2-2h5v18M13 8h3a2 2 0 0 1 2 2v3.5a1.5 1.5 0 0 0 3 0V8l-3-3" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/photo-1758362066807-39825a297aa4?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'Close-up of a fuel dispenser nozzle',
   },
   {
     title: 'Fuel Automation',
     desc: 'Total control over your fuel, drop by drop. Intelligent automation tracks every litre, eliminates waste, and cuts operating costs.',
     tags: ['Real-Time Tracking', 'Loss Prevention'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'Real-time monitoring dashboard screen',
   },
   {
     title: 'Surveillance & Access Control',
     desc: 'See every corner of your site and control exactly who gets in. CCTV coverage and access control systems built for round-the-clock protection.',
     tags: ['CCTV Cameras', 'Access Control', 'Remote Monitoring'],
-    icon: (
-      <svg viewBox="0 0 24 24" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <rect x="2.5" y="7" width="12" height="9" rx="1.5" />
-        <path d="M14.5 10 20.5 7v9l-6-3Z" strokeLinejoin="round" />
-        <circle cx="8.5" cy="11.5" r="2" />
-      </svg>
-    ),
+    img: 'https://images.unsplash.com/photo-1529265895721-65945a176cff?auto=format&fit=crop&w=160&h=160&q=70',
+    imgAlt: 'CCTV security camera mounted on a wall',
   },
 ];
 
@@ -126,7 +105,11 @@ function Services() {
             <span>Network</span>
           </div>
           <div className="capability-item">
-            <svg viewBox="0 0 64 64" className="cap-illustration"><path d="M10 24 L54 24 L48 14 L16 14 Z" strokeWidth="2" strokeLinejoin="round" fill="none" /><line x1="18" y1="24" x2="18" y2="46" strokeWidth="2" /><line x1="46" y1="24" x2="46" y2="46" strokeWidth="2" /><rect x="28" y="30" width="8" height="18" rx="1" strokeWidth="2" /></svg>
+            <img
+              className="cap-illustration cap-photo"
+              src="https://images.unsplash.com/photo-1727483771218-c1cc488d020c?auto=format&fit=crop&w=200&q=70"
+              alt="Forecourt canopy and fuel pumps"
+            />
             <span>Forecourt</span>
           </div>
           <div className="capability-item">
@@ -150,7 +133,9 @@ function Services() {
         <div className="services-grid">
           {CORE_SERVICES.map((s) => (
             <div className="service-card reveal in" key={s.title}>
-              <div className="icon-badge">{s.icon}</div>
+              <div className="icon-badge">
+                <img src={s.img} alt={s.imgAlt} loading="lazy" />
+              </div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
               <div className="service-tags">
